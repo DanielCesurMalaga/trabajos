@@ -7,7 +7,6 @@ class Alumno extends Persona {
 
 
 	// CONSTRUCTOR
-
 	public Alumno(String nombre, int edad, String curso) {
 		super(nombre, edad);
 		this.curso = curso;

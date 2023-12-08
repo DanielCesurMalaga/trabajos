@@ -3,15 +3,20 @@ package alumnoCesur;
 class Clase {
 
 	// ATRIBUTOS
-
 	private int numAlumnos;
 	private Alumno[] alumnos;
-	private static final int TOTALALUMNOS = 15;
-	private String nombre;
+	private static final int MAX_ALUMNOS = 15;
+	private String nombreClase;
 	private Profesor profesor;
 
-	// GETTERS Y SETTERS
+	// CONSTRUCTOR
+	public Clase(String nombre) {
+		numAlumnos = 0;
+		alumnos = new Alumno[MAX_ALUMNOS];
+		this.nombreClase = nombre;
+	}
 
+	// GETTERS Y SETTERS
 	public int getNumAlumnos() {
 		return numAlumnos;
 	}
@@ -29,18 +34,16 @@ class Clase {
 	}
 
 	public static int getTotalalumnos() {
-		return TOTALALUMNOS;
+		return MAX_ALUMNOS;
 	}
 
 	public String getNombre() {
-		return nombre;
+		return nombreClase;
 	}
 
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		this.nombreClase = nombre;
 	}
-
-	// CONSTRUCTOR
 
 	public Profesor getProfesor() {
 		return profesor;
@@ -50,40 +53,43 @@ class Clase {
 		this.profesor = profesor;
 	}
 
-	public Clase(String nombre) {
-
-		numAlumnos = 0;
-
-		alumnos = new Alumno[TOTALALUMNOS];
-
-		this.nombre = nombre;
-
-	}
-
 	// METODOS
-
 	public String toString() {
 
-		return ("[Clase: " + nombre + ", NumAlumnos: " + numAlumnos + "]");
+		return ("[Clase: " + nombreClase + ", Profesor: " + profesor + ", NumAlumnos: " + numAlumnos + "]");
 	}
 
-	public void add(Alumno nuevoAlu) {
+	public void add(Alumno nuevoAlumno) {
 
-		if (numAlumnos < TOTALALUMNOS) {
-			alumnos[numAlumnos] = nuevoAlu;
-
+		if (numAlumnos < MAX_ALUMNOS) {
+			alumnos[numAlumnos] = nuevoAlumno;
 			numAlumnos++;
 		}
-
 	}
 
 	public void delete(String nombre) {
-
-		for (int i = 0; i < getNumAlumnos(); i++) {
-			if (getAlumnos()[i].getNombre() == nombre) {
-
+		// solo hay un alumno con el mismo nombre.
+		int indice = 0;
+		while ((alumnos[indice].getNombre() != nombre) && (indice < alumnos.length)) {
+			indice++;
+		}
+		if (indice < alumnos.length) {
+			numAlumnos--;
+			for (int i = indice; i < numAlumnos; i++) {
+				alumnos[i] = alumnos[i + 1];
 			}
+			alumnos[numAlumnos] = null;
+
+		} else { // recorrido array sin encontrar el objeto.
+			System.out.println("El alumno [" + nombre + "] no se encuentra en la clase [" + nombreClase + "]");
+		}
+
+	} // fin delete
+
+	public void listadoAlumnos() {
+		System.out.println("Listado alumnos de la clase: "+nombreClase);
+		for (int i=0; i<numAlumnos;i++) {
+			System.out.println(alumnos[i]);
 		}
 	}
-
 } // fin CLASE

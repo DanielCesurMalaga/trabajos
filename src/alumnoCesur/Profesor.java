@@ -16,5 +16,9 @@ public class Profesor extends Persona{
 		this.curso = curso;
 	}
 	
+	public String toString() {
+		return ("["+this.getNombre()+"]");
+	}
+	
 	
 }
