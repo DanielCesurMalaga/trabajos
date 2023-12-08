@@ -1,3 +1,4 @@
+package practicas;
 import java.util.Scanner;
 import java.util.Random;
 
