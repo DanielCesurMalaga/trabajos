@@ -1,6 +1,6 @@
 package practicas;
 import java.util.Random;
-public class GeneradorObjetos {
+public class Creator {
 	
 	private static String[] nombres = { "Daniel", "Andres", "Francisco", "Santiago", "JoseRamon", "Ramon", "Dario", "JuanCarlos",
 			"Alvaro", "Janhin", "Adrian", "Alejandro", "Simri"};
@@ -8,7 +8,7 @@ public class GeneradorObjetos {
 	private static String[] apellidos = { "Fernandez", "Campos", "Garcia", "Perez", "Ruiz", "Ungureanu", "Diaz", "Rodriguez", "Torres",
 			"Villa" };
 	
-	public static String generadorNombre() {
+	public static String newName() {
 		Random aleatorio = new Random();
 		int numNombre = aleatorio.nextInt(nombres.length);
 		int numApellido1 = aleatorio.nextInt(apellidos.length);
@@ -19,7 +19,7 @@ public class GeneradorObjetos {
 				apellidos[numApellido2]);
 		
 	}
-	public static int generadorEdad() {
+	public static int newAge() {
 		Random aleatorio = new Random();
 		return (17+aleatorio.nextInt(30));
 	}

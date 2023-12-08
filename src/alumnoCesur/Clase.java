@@ -86,10 +86,36 @@ class Clase {
 
 	} // fin delete
 
+	public void delete(Alumno alumno) {
+		Alumno[] alumnosTemp = new Alumno[MAX_ALUMNOS];
+		int numAlumTemp = 0;
+		for (int i = 0; i < numAlumnos; i++) {
+			if (alumnos[i] != alumno) {
+				alumnosTemp[numAlumTemp] = alumnos[i];
+				numAlumTemp++;
+			}
+		}
+		if (numAlumTemp<numAlumnos) {
+			alumnos = alumnosTemp;
+			numAlumnos--;
+		} else {
+			System.out.println("El alumno [" + alumno.getNombre() + "] no se encuentra en la clase [" + nombreClase + "]");
+		}
+		
+	}
+
+	public void deleteAll() {
+		for (int i = 0; i < numAlumnos; i++) {
+			alumnos[i] = null;
+		}
+		numAlumnos = 0;
+	}
+
 	public void listadoAlumnos() {
-		System.out.println("Listado alumnos de la clase: "+nombreClase);
-		for (int i=0; i<numAlumnos;i++) {
+		System.out.println("Listado alumnos de la clase: " + nombreClase);
+		for (int i = 0; i < numAlumnos; i++) {
 			System.out.println(alumnos[i]);
 		}
 	}
+
 } // fin CLASE

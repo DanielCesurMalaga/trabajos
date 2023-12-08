@@ -24,7 +24,7 @@ class Alumno extends Persona {
 
 	public String toString() {
 
-		return ("[Alumno: " + super.getNombre() + ", Edad: " + super.getEdad() + ", Curso " + curso + "]");
+		return ("[Alumno: " + super.getNombre() + ", Edad: " + super.getEdad() + ", Curso: " + curso + "]");
 
 	}
 

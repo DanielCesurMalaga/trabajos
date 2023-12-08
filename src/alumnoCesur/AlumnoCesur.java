@@ -1,6 +1,6 @@
 package alumnoCesur;
 
-import practicas.GeneradorObjetos;
+import practicas.Creator;
 
 public class AlumnoCesur {
 
@@ -9,26 +9,25 @@ public class AlumnoCesur {
 	public static void main(String[] args) {
 
 		Clase premiumPlus = new Clase("Premium Plus");
-		premiumPlus.setProfesor(new Profesor("Daniel",47,"DAM"));
+		premiumPlus.setProfesor(new Profesor("Daniel", 47, "DAM"));
 
 		for (int i = 0; i < 15; i++) {
-			premiumPlus.add(new Alumno(GeneradorObjetos.generadorNombre(), GeneradorObjetos.generadorEdad(), "DAM"));
+			premiumPlus.add(new Alumno(Creator.newName(), Creator.newAge(), "DAM"));
 		}
 		System.out.println(premiumPlus);
 		premiumPlus.listadoAlumnos();
 
-		for (int i = 0; i < 15; i++) {
-			premiumPlus.delete(premiumPlus.getAlumnos()[0].getNombre());
-		}
+		System.out.println();
+		premiumPlus.delete(new Alumno("nombre",16,"DAM"));
 		System.out.println(premiumPlus);
 		premiumPlus.listadoAlumnos();
 
 		Clase presencial = new Clase("Presencial");
 
 		for (int i = 0; i < Clase.getTotalalumnos(); i++) {
-			presencial.add(new Alumno(GeneradorObjetos.generadorNombre(), GeneradorObjetos.generadorEdad(), "DAM"));
+			presencial.add(new Alumno(Creator.newName(), Creator.newAge(), "DAM"));
 		}
-		//System.out.println(presencial);
+		System.out.println(presencial);
 	}// FIN MAIN
 
 } // FIN ALUMNOCESUR
