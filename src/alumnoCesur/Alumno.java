@@ -5,7 +5,6 @@ class Alumno extends Persona {
 	// ATRIBUTOS
 	private String curso;
 
-
 	// CONSTRUCTOR
 	public Alumno(String nombre, int edad, String curso) {
 		super(nombre, edad);

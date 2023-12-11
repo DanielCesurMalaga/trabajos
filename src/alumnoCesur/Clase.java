@@ -95,13 +95,14 @@ class Clase {
 				numAlumTemp++;
 			}
 		}
-		if (numAlumTemp<numAlumnos) {
+		if (numAlumTemp < numAlumnos) {
 			alumnos = alumnosTemp;
 			numAlumnos--;
 		} else {
-			System.out.println("El alumno [" + alumno.getNombre() + "] no se encuentra en la clase [" + nombreClase + "]");
+			System.out.println(
+					"El alumno [" + alumno.getNombre() + "] no se encuentra en la clase [" + nombreClase + "]");
 		}
-		
+
 	}
 
 	public void deleteAll() {

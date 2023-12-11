@@ -19,6 +19,7 @@ public class Creator {
 				apellidos[numApellido2]);
 		
 	}
+
 	public static int newAge() {
 		Random aleatorio = new Random();
 		return (17+aleatorio.nextInt(30));
