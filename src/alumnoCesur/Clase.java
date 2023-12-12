@@ -70,10 +70,15 @@ class Clase {
 	public void delete(String nombre) {
 		// solo hay un alumno con el mismo nombre.
 		int indice = 0;
-		while ((alumnos[indice].getNombre() != nombre) && (indice < alumnos.length)) {
-			indice++;
+		boolean encontrado = false;
+		while (!encontrado && (indice < numAlumnos - 1)) {
+			if (alumnos[indice].getNombre() == nombre) {
+				encontrado = true;
+			} else {
+				indice++;
+			}
 		}
-		if (indice < alumnos.length) {
+		if (encontrado==true) {
 			numAlumnos--;
 			for (int i = indice; i < numAlumnos; i++) {
 				alumnos[i] = alumnos[i + 1];
@@ -115,7 +120,7 @@ class Clase {
 	public void listadoAlumnos() {
 		System.out.println("Listado alumnos de la clase: " + nombreClase);
 		for (int i = 0; i < numAlumnos; i++) {
-			System.out.println(alumnos[i]);
+			System.out.println(alumnos[i]+" , alumno posicion: "+i);
 		}
 	}
 
