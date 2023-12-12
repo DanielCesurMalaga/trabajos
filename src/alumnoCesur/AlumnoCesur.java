@@ -8,28 +8,29 @@ public class AlumnoCesur {
 
 	public static void main(String[] args) {
 
-		Profesor teacher = new Profesor("Daniel",47,"DAM");
-		System.out.println(teacher.getNombre());
-		
 		Clase premiumPlus = new Clase("Premium Plus");
 		System.out.println(premiumPlus);
-		premiumPlus.setProfesor(teacher);
+		premiumPlus.setProfesor(new Profesor("Daniel", 47, "DAM"));
 		System.out.println(premiumPlus);
-		
-		
-		
 
-		for (int i = 0; i < 15; i++) {
-			premiumPlus.add(new Alumno(Creator.newName(), Creator.newAge(), "DAM"));
+		String nombre="";
+		int edad=0;
+		Alumno alumno = new Alumno(nombre, edad,"DAM");
+
+		for (int i = 0; i < Clase.getTotalalumnos(); i++) {
+			nombre = Creator.newName();
+			edad = Creator.newAge();
+			alumno.setNombre(nombre);
+			alumno.setEdad(edad);
+			premiumPlus.add(alumno);
+			System.out.println(premiumPlus.getAlumnos()[i]);
 		}
-		
-		
-		
-		
-		
-		
-		
-		
+
+		premiumPlus.deleteAll();
+
+		System.out.println(premiumPlus);
+		System.out.println(premiumPlus.getAlumnos()[4]);
+
 		System.out.println(premiumPlus);
 		premiumPlus.listadoAlumnos();
 
