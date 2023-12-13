@@ -71,7 +71,7 @@ class Clase {
 		// solo hay un alumno con el mismo nombre.
 		int indice = 0;
 		boolean encontrado = false;
-		while (!encontrado && (indice < numAlumnos - 1)) {
+		while (!encontrado && (indice < numAlumnos)) {
 			if (alumnos[indice].getNombre() == nombre) {
 				encontrado = true;
 			} else {

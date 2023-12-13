@@ -8,6 +8,9 @@ public class Creator {
 	private static String[] apellidos = { "Fernandez", "Campos", "Garcia", "Perez", "Ruiz", "Ungureanu", "Diaz", "Rodriguez", "Torres",
 			"Villa" };
 	
+	private static String[] asistencia = {"premium Plus", "online", "presencial"};
+	private static String[] tipoCurso = {"DAM", "DAW", "Ciber Seguridad","BigData"};
+	
 	public static String newName() {
 		Random aleatorio = new Random();
 		int numNombre = aleatorio.nextInt(nombres.length);
@@ -23,6 +26,14 @@ public class Creator {
 	public static int newAge() {
 		Random aleatorio = new Random();
 		return (17+aleatorio.nextInt(30));
+	}
+	
+	public static String newClase() {
+		Random aleatorio = new Random();
+		return(asistencia[aleatorio.nextInt(asistencia.length)]+
+				" "+
+				tipoCurso[aleatorio.nextInt(tipoCurso.length)]
+				);
 	}
 	
 }
