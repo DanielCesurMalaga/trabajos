@@ -1,6 +1,6 @@
 package practicas;
 
-public class usoFor {
+public class UsoFor {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

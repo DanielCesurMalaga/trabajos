@@ -1,7 +1,7 @@
 package practicas;
 import java.util.Random;
 
-public class aleatorios {
+public class Aleatorios {
 
 	public static void main(String[] args) {
 		Random aleatorio;

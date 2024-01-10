@@ -1,6 +1,6 @@
 package practicas;
 
-public class abecedario {
+public class Abecedario {
 	public static void main(String[] args) {
 		String[] cadenaInicial = new String[10];
 		for (int i=0; i<10;i++) {
