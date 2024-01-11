@@ -4,12 +4,14 @@ public class Insecto extends Animal {
 	private boolean alas;
 	private boolean antenas;
 	private Enemigo enemigo;
+	public String atributo;
 	
 	public Insecto(String nombre, int tpoVida, boolean alas, boolean antenas, String enemigo) {
 		super(nombre, tpoVida);
 		this.enemigo = new Enemigo(enemigo);
 		this.alas = alas;
 		this.antenas = antenas;
+		atributo = "soy insecto";
 	}
 	public boolean isAlas() {
 		return alas;
