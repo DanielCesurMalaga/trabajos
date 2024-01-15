@@ -3,15 +3,15 @@ package animales;
 public class Insecto extends Animal {
 	private boolean alas;
 	private boolean antenas;
-	private Enemigo enemigo;
+	private Enemigo[] enemigos;
 	public String atributo;
 	
-	public Insecto(String nombre, int tpoVida, boolean alas, boolean antenas, String enemigo) {
+	public Insecto(String nombre, int tpoVida, boolean alas, boolean antenas) {
 		super(nombre, tpoVida);
-		this.enemigo = new Enemigo(enemigo);
 		this.alas = alas;
 		this.antenas = antenas;
 		atributo = "soy insecto";
+		enemigos = new Enemigo[5];
 	}
 	public boolean isAlas() {
 		return alas;
@@ -26,12 +26,11 @@ public class Insecto extends Animal {
 		this.antenas = antenas;
 	}
 	
-	
-	public Enemigo getEnemigo() {
-		return enemigo;
+	public Enemigo[] getEnemigos() {
+		return enemigos;
 	}
-	public void setEnemigo(Enemigo enemigo) {
-		this.enemigo = enemigo;
+	public void setEnemigo(String enemigo) {
+		enemigos[0]= new Enemigo(enemigo);
 	}
 
 
