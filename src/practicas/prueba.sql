@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-01-2024 a las 10:57:28
+-- Tiempo de generación: 16-01-2024 a las 12:26:31
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -108,12 +108,9 @@ CREATE TABLE `vehiculo` (
 --
 
 INSERT INTO `vehiculo` (`matricula`, `bastidor`, `marca`, `modelo`, `propietario`) VALUES
-('1234ABC', '1', 'FORD', 'MUSTANG', 1),
-('1234ABD', '2', 'FERRARI', 'ENZO', 1),
+('1234abc', 'jdj', 'mercedes', 'benz', 1),
 ('4567abd', '3', 'seat', 'cordoba', 2),
-('4567bfd', '5', 'ford', 'focus', 4),
-('7867abd', '4', 'seat', 'ibiza', 3),
-('8277abd', '6', 'bmw', 'm3', 5);
+('46djhy', 'hbw', 'seat', 'cupra', 2);
 
 --
 -- Índices para tablas volcadas
