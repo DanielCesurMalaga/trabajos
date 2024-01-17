@@ -32,4 +32,7 @@ public class Animal {
 		this.tpoVida = tpoVida;
 	}
 
+	public void sonido() {
+		System.out.println("sonido ANIMAL");
+	}
 }
