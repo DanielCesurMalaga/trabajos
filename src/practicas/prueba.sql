@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-01-2024 a las 12:26:31
+-- Tiempo de generación: 22-01-2024 a las 08:34:58
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -30,19 +30,21 @@ SET time_zone = "+00:00";
 CREATE TABLE `conductor` (
   `dni` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
-  `permiso` int(11) NOT NULL
+  `permiso` int(11) NOT NULL,
+  `edad` int(11) NOT NULL,
+  `num_vehic` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `conductor`
 --
 
-INSERT INTO `conductor` (`dni`, `nombre`, `permiso`) VALUES
-(1, 'ANDRES', 1),
-(2, 'FRAN', 2),
-(3, 'SANTIAGO', 3),
-(4, 'JOSE RAMON', 4),
-(5, 'JUAN CARLOS', 5);
+INSERT INTO `conductor` (`dni`, `nombre`, `permiso`, `edad`, `num_vehic`) VALUES
+(1, 'ANDRES', 1, 17, 1),
+(2, 'FRAN', 2, 22, 1),
+(3, 'SANTIAGO', 3, 26, 1),
+(4, 'JOSE RAMON', 4, 0, 1),
+(5, 'JUAN CARLOS', 5, 44, NULL);
 
 -- --------------------------------------------------------
 
