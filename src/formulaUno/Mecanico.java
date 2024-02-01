@@ -2,7 +2,7 @@ package formulaUno;
 
 public class Mecanico extends Persona {
 	
-	//ATRIBUTOS
+	//ATRIBUTOS.
 	
 	private int velocidad;
 	private int experiencia;

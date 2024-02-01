@@ -2,7 +2,7 @@ package formulaUno;
 
 public class Chasis {
 
-	// ATRIBUTOS
+	// ATRIBUTOS.
 
 	private final int idChasis;
 	private int material; // Calidad del material

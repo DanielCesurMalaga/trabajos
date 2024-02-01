@@ -2,7 +2,7 @@ package formulaUno;
 
 public class Neumatico {
 
-	// ATRIBUTOS
+	// ATRIBUTOS.
 
 	private final int idNeumatico;
 	private final int material;

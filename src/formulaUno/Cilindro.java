@@ -2,7 +2,7 @@ package formulaUno;
 
 public class Cilindro {
 
-	// ATRIBUTOS
+	// ATRIBUTOS.
 
 	private final int idCilindro;
 	private final int capacidad;

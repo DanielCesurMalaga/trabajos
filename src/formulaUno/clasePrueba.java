@@ -4,7 +4,7 @@ public class clasePrueba {
 
 	public static void main(String[] args) {
 		
-		//creamos escudería.
+		//creamos escudería
 		Escuderia ferrari = new Escuderia("Ferrari");
 		
 		//Insertar jefe, ingenieros, mecanicos, coches y pilotos.

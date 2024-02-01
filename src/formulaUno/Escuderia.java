@@ -2,7 +2,7 @@ package formulaUno;
 
 public class Escuderia {
 
-	// ATRIBUTOS
+	// ATRIBUTOS.
 	
 		// constantes de clase:
 	private static final int NUMING = 4;

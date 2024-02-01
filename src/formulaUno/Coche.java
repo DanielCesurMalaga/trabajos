@@ -2,7 +2,7 @@ package formulaUno;
 
 public class Coche {
 
-	// ATRIBUTOS
+	// ATRIBUTOS.
 
 	private final String modelo;
 	private final Chasis chasis;

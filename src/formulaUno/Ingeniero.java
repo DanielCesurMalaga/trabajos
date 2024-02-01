@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Ingeniero extends Persona {
 
-	// ATRIBUTOS
+	// ATRIBUTOS.
 
 	private final int inteligencia;
 	private final int innovacion;

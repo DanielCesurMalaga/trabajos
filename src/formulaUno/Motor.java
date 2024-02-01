@@ -2,7 +2,7 @@ package formulaUno;
 
 public class Motor {
 
-	// ATRIBUTOS
+	// ATRIBUTOS.
 
 	private final int idMotor;
 	private final Cilindro cilindro;

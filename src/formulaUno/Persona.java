@@ -2,7 +2,7 @@ package formulaUno;
 
 public class Persona {
 
-	// ATRIBUTOS
+	// ATRIBUTOS.
 
 	private int edad;
 	private String nombre;

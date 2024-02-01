@@ -2,7 +2,7 @@ package formulaUno;
 
 
 class ArrayCoche {
-	// atributos
+	// atributos.
 	private Coche[] miArray;
 	private int numElem;
 	private static final int lONGITUD_DEFAULT = 2;

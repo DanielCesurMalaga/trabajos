@@ -2,7 +2,7 @@ package formulaUno;
 
 public class Turbo {
 
-	// ATRIBUTOS
+	// ATRIBUTOS.
 
 	private final int idTurbo;
 	private final int rpm;

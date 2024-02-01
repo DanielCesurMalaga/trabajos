@@ -2,7 +2,7 @@ package formulaUno;
 
 public class JefeEscuderia extends Persona {
 	
-	//ATRIBUTOS
+	//ATRIBUTOS.
 	
 	private int inteligencia;
 	private int liderazgo;

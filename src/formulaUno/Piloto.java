@@ -2,7 +2,7 @@ package formulaUno;
 
 public class Piloto extends Persona {
 
-	//ATRIBUTOS
+	//ATRIBUTOS.
 	
 	private int reflejos;
 	private int inteligencia;
