@@ -1,0 +1,13 @@
+create table oficina ( ciudad varchar(30) not null, id_oficina int not null, objetivo int, ventas int, constraint pk_oficina primary key (id_oficina) );
+
+create table producto ( id_fab int not null, id_prod int not null, precio int not null, cantidad int, constraint pk_producto primary key (id_fab,id_prod) );
+
+create table empleado ( dni int not null, nombre varchar(30) not null, edad int not null, tienda varchar(30) not null, fecha_incorporacion date not null, cargo varchar(30) not null, cuota int not null, ventas int not null, jefe varchar(30) not null, id_oficina int not null, constraint pk_empleado primary key (dni), constraint fk_oficina foreign key (id_oficina) references oficina(id_oficina) );
+
+create table pedido ( num_pedido int not null, fecha_realizacion date not null, id_cliente int not null, id_empleado int not null, constraint pk_pedido primary key (num_pedido), constraint fk_cliente foreign key (id_cliente) references cliente(id_cliente), constraint fk_empleado foreign key (id_empleado) references empleado(dni) );
+
+create table asesora( id_cliente int not null, id_empleado int not null, constraint fk_cliases foreign key (id_cliente) references cliente(id_cliente), constraint fk_empases foreign key (id_empleado) references empleado(dni), constraint pk_asesora primary key (id_cliente,id_empleado) );
+
+create table selecciona( id_cli int not null, id_fab int not null, id_prod int not null, constraint fk_cliselec foreign key (id_cli) references cliente(id_cliente), constraint fk_prodselec foreign key (id_fab,id_prod) references producto(id_fab,id_prod), constraint pk_selecciona primary key (id_cli,id_fab,id_prod) );
+
+create table incluye( num_pedido int not null, id_fab int not null, id_prod int not null, constraint fk_pedincl foreign key (num_pedido) references pedido(num_pedido), constraint fk_prodincl foreign key (id_fab,id_prod) references producto(id_fab,id_prod), constraint pk_selecciona primary key (num_pedido,id_fab,id_prod) );
