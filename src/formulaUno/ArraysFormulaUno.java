@@ -1,6 +1,5 @@
 package formulaUno;
 
-
 class ArrayCoche {
 	// atributos.
 	private Coche[] miArray;
@@ -35,7 +34,7 @@ class ArrayCoche {
 		return miArray;
 	}
 
-	public Coche getIntMiArray(int posicion) {
+	public Coche getCocheMiArray(int posicion) {
 		if ((posicion < miArray.length) && (posicion >= 0)) {
 			return miArray[posicion];
 		} else {
@@ -46,12 +45,12 @@ class ArrayCoche {
 	public void resetear() {
 		for (int i = 0; i < miArray.length; i++) {
 			miArray[i] = null;
-			numElem=0;
+			numElem = 0;
 		}
-		
+
 	}
 
-	public void insertarValor(Coche coche) {
+	public void insertarCoche(Coche coche) {
 		if (numElem == miArray.length) {
 			System.out.println("Array lleno, no se ha insertado elemento");
 		} else {
@@ -59,7 +58,32 @@ class ArrayCoche {
 			numElem++;
 		}
 	}
-	
+
+	public void destruirCoche(Coche coche) {
+		if (numElem > 0) { // hay coches en el garaje
+			boolean noEncontrado = true;
+			int contador = 0;
+			while (noEncontrado && (contador < numElem)) {
+				if (miArray[contador] == coche) {
+					noEncontrado = false;
+				} else {
+					contador++;
+				}
+			}
+			if (contador == numElem) { // el coche no ha sido encontrado.
+				System.out.println("El coche: " + coche.getModelo() + " no se encuentra el el garaje");
+			} else { // hemos encontrado el coche, lo tengo q borrar
+				numElem--;
+				for (int i = contador; i < numElem; i++) {
+					miArray[i] = miArray[i + 1];
+				}
+				miArray[numElem] = null;
+			}
+		} else { // garaje vacío no hay q buscar para eliminar
+			System.out.println("Garaje vacío, no se puede encontrar el coche");
+		}
+
+	}
 } // cierra ArrayCoche
 
 class ArrayIngeniero {
@@ -107,9 +131,9 @@ class ArrayIngeniero {
 	public void resetear() {
 		for (int i = 0; i < miArray.length; i++) {
 			miArray[i] = null;
-			numElem=0;
+			numElem = 0;
 		}
-		
+
 	}
 
 	public void insertarValor(Ingeniero ingeniero) {
@@ -120,9 +144,34 @@ class ArrayIngeniero {
 			numElem++;
 		}
 	}
-	
-} // cierra ArrayIngeniero
 
+	public void despedirIngeniero(Ingeniero ingeniero) {
+		if (numElem > 0) {
+			boolean noEncontrado = true;
+			int contador = 0;
+			while (noEncontrado && (contador < numElem)) {
+				if (miArray[contador] == ingeniero) {
+					noEncontrado = false;
+				} else {
+					contador++;
+				}
+			}
+			if (contador == numElem) {
+				System.out.println("El ingeniero: " + ingeniero.getNombre() + " no se encuentra en el staff");
+			} else {
+				numElem--;
+				for (int i = contador; i < numElem; i++) {
+					miArray[i] = miArray[i + 1];
+				}
+				miArray[numElem] = null;
+			}
+		} else {
+			System.out.println("Staff vacío, no se puede encontrar el ingeniero");
+		}
+
+	}
+
+} // cierra ArrayIngeniero
 
 class ArrayMecanico {
 	// atributos
@@ -169,9 +218,9 @@ class ArrayMecanico {
 	public void resetear() {
 		for (int i = 0; i < miArray.length; i++) {
 			miArray[i] = null;
-			numElem=0;
+			numElem = 0;
 		}
-		
+
 	}
 
 	public void insertarValor(Mecanico mecanico) {
@@ -182,7 +231,32 @@ class ArrayMecanico {
 			numElem++;
 		}
 	}
-	
+
+	public void despedirMecanico(Mecanico mecanico) {
+		if (numElem > 0) {
+			boolean noEncontrado = true;
+			int contador = 0;
+			while (noEncontrado && (contador < numElem)) {
+				if (miArray[contador] == mecanico) {
+					noEncontrado = false;
+				} else {
+					contador++;
+				}
+			}
+			if (contador == numElem) {
+				System.out.println("El mecanico: " + mecanico.getNombre() + " no se encuentra en el staff");
+			} else {
+				numElem--;
+				for (int i = contador; i < numElem; i++) {
+					miArray[i] = miArray[i + 1];
+				}
+				miArray[numElem] = null;
+			}
+		} else {
+			System.out.println("Staff vacío, no se puede encontrar el mecanico");
+		}
+
+	}
 } // cierra ArrayMecanico
 
 class ArrayPiloto {
@@ -230,9 +304,9 @@ class ArrayPiloto {
 	public void resetear() {
 		for (int i = 0; i < miArray.length; i++) {
 			miArray[i] = null;
-			numElem=0;
+			numElem = 0;
 		}
-		
+
 	}
 
 	public void insertarValor(Piloto piloto) {
@@ -243,5 +317,30 @@ class ArrayPiloto {
 			numElem++;
 		}
 	}
-	
+
+	public void despedirPiloto(Piloto piloto) {
+		if (numElem > 0) {
+			boolean noEncontrado = true;
+			int contador = 0;
+			while (noEncontrado && (contador < numElem)) {
+				if (miArray[contador] == piloto) {
+					noEncontrado = false;
+				} else {
+					contador++;
+				}
+			}
+			if (contador == numElem) {
+				System.out.println("El piloto: " + piloto.getNombre() + " no se encuentra en el staff");
+			} else {
+				numElem--;
+				for (int i = contador; i < numElem; i++) {
+					miArray[i] = miArray[i + 1];
+				}
+				miArray[numElem] = null;
+			}
+		} else {
+			System.out.println("Staff vacío, no se puede encontrar el piloto");
+		}
+
+	}
 } // cierra ArrayPiloto

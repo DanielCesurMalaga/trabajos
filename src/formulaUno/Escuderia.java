@@ -29,8 +29,10 @@ public class Escuderia {
 		this.ingenieros = new ArrayIngeniero(NUMING);
 		this.mecanicos = new ArrayMecanico(NUMMEC);
 		this.pilotos = new ArrayPiloto(NUMPIL);
+		
 
 	}
 
 	// GETTERS Y SETTTERS
-}
+	
+	}
