@@ -1,39 +1,40 @@
 package formulaUno;
-
+import java.util.Random;
 public class Chasis {
 
-	// ATRIBUTOS.
+	// ATRIBUTOS
 
-	private final int idChasis;
-	private int material; // Calidad del material
-	private final Ingeniero ingeniero;
-	private final int trabajoIng;
+	private final int IDCHASIS;
+	private final int MATERIAL; // Calidad del material
+	private final Ingeniero INGENIERO;
+	private final int TRABAJOING;
 
 	// CONSTRUCTOR
 
 	public Chasis(int idChasis, int material, Ingeniero ingeniero) {
-		this.trabajoIng = ingeniero.trabajo();
-		this.idChasis = idChasis;
-		this.material = material;
-		this.ingeniero = ingeniero;
+		this.TRABAJOING = ingeniero.trabajo();
+		Random aleatorio = new Random();
+		this.IDCHASIS = idChasis;
+		this.MATERIAL = aleatorio.nextInt(10);
+		this.INGENIERO = ingeniero;
 	}
 
 	// GETTERS Y SETTERS
 
 	public int getIdChasis() {
-		return idChasis;
+		return IDCHASIS;
 	}
 
 	public int getMaterial() {
-		return material;
+		return MATERIAL;
 	}
 
 	public Ingeniero getIngenieroCha() {
-		return ingeniero;
+		return INGENIERO;
 	}
 
 	public int construido() {
 		
-		return ((material+trabajoIng)/2);
+		return ((MATERIAL+TRABAJOING)/2);
 	}
 }

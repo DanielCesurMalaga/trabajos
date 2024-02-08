@@ -2,37 +2,37 @@ package formulaUno;
 
 public class Coche {
 
-	// ATRIBUTOS.
+	// ATRIBUTOS
 
-	private final String modelo;
-	private final Chasis chasis;
-	private final Neumatico neumatico;
-	private final Ingeniero ingeniero;
-	private final Motor motor;
+	private final String MODELO;
+	private Chasis chasis;
+	private Neumatico neumatico;
+	private final Ingeniero INGENIERO;
+	private Motor motor;
 
-	private final int trabajoNeu;
-	private final int trabajoCha;
-	private final int trabajoMot;
-	private final int trabajoIng;
+	private final int TRABAJONEU;
+	private final int TRABAJOCHA;
+	private final int TRABAJOMOT;
+	private final int TRABAJOING;
 
 	// CONSTRUCTOR
 
 	public Coche(String modelo, Chasis chasis, Neumatico neumatico, Ingeniero ingeniero, Motor motor) {
-		this.trabajoCha = chasis.construido();
-		this.trabajoIng = ingeniero.trabajo();
-		this.trabajoNeu = neumatico.construido();
-		this.trabajoMot = motor.construido();
-		this.modelo = modelo;
+		this.TRABAJOCHA = chasis.construido();
+		this.TRABAJOING = ingeniero.trabajo();
+		this.TRABAJONEU = neumatico.construido();
+		this.TRABAJOMOT = motor.construido();
+		this.MODELO = modelo;
 		this.chasis = chasis;
 		this.neumatico = neumatico;
-		this.ingeniero = ingeniero;
+		this.INGENIERO = ingeniero;
 		this.motor = motor;
 	}
 
 	// GETTERS Y SETTERS
 
 	public String getModelo() {
-		return modelo;
+		return MODELO;
 	}
 
 	public Chasis getChasis() {
@@ -44,7 +44,7 @@ public class Coche {
 	}
 
 	public Ingeniero getIngeniero() {
-		return ingeniero;
+		return INGENIERO;
 	}
 
 	public Motor getMotor() {
@@ -52,24 +52,24 @@ public class Coche {
 	}
 
 	public int getTrabajoNeu() {
-		return trabajoNeu;
+		return TRABAJONEU;
 	}
 
 	public int getTrabajoCha() {
-		return trabajoCha;
+		return TRABAJOCHA;
 	}
 
 	public int getTrabajoMot() {
-		return trabajoMot;
+		return TRABAJOMOT;
 	}
 
 	public int getTrabajoIng() {
-		return trabajoIng;
+		return TRABAJOING;
 	}
 
 	public int construido() {
 
-		return ((trabajoNeu + trabajoCha + trabajoMot + trabajoIng) / 4);
+		return ((TRABAJONEU + TRABAJOCHA + TRABAJOMOT + TRABAJOING) / 4);
 	}
 
 }

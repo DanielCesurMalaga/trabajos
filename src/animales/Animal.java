@@ -35,4 +35,8 @@ public class Animal {
 	public void sonido() {
 		System.out.println("sonido ANIMAL");
 	}
+	
+	public boolean equals(Animal animal) {
+		return (this.nombre==animal.nombre);
+	}
 }

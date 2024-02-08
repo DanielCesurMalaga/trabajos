@@ -2,32 +2,32 @@ package formulaUno;
 
 public class Motor {
 
-	// ATRIBUTOS.
+	// ATRIBUTOS
 
-	private final int idMotor;
-	private final Cilindro cilindro;
-	private final Turbo turbo;
-	private final Ingeniero ingeniero;
-	private final int trabajoCil;
-	private final int trabajoTur;
-	private final int trabajoIng;
+	private final int IDMOTOR;
+	private Cilindro cilindro;
+	private Turbo turbo;
+	private final Ingeniero INGENIERO;
+	private final int TRABAJOCIL;
+	private final int TRABAJOTUR;
+	private final int TRABAJOING;
 
 	// CONSTRUCTOR
 
 	public Motor(int idMotor, Cilindro cilindro, Turbo turbo, Ingeniero ingeniero) {
-		this.trabajoCil = cilindro.construido();
-		this.trabajoTur = turbo.construido();
-		this.trabajoIng = ingeniero.trabajo();
-		this.idMotor = idMotor;
+		this.TRABAJOCIL = cilindro.construido();
+		this.TRABAJOTUR = turbo.construido();
+		this.TRABAJOING = ingeniero.trabajo();
+		this.IDMOTOR = idMotor;
 		this.cilindro = cilindro;
 		this.turbo = turbo;
-		this.ingeniero = ingeniero;
+		this.INGENIERO = ingeniero;
 	}
 
 	// GETTERS Y SETTERS
 
 	public int getIdMotor() {
-		return idMotor;
+		return IDMOTOR;
 	}
 
 	public Cilindro getCilindroMot() {
@@ -39,12 +39,12 @@ public class Motor {
 	}
 
 	public Ingeniero getIngenieroMot() {
-		return ingeniero;
+		return INGENIERO;
 	}
 	
 	public int construido () {
 		
-		return ((trabajoCil +trabajoTur +trabajoIng)/3);
+		return ((TRABAJOCIL +TRABAJOTUR +TRABAJOING)/3);
 	}
 
 }

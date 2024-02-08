@@ -1,45 +1,46 @@
 package formulaUno;
-
+import java.util.Random;
 public class Turbo {
 
-	// ATRIBUTOS.
+	// ATRIBUTOS
 
-	private final int idTurbo;
-	private final int rpm;
-	private final int tamaño;
-	private final Ingeniero ingeniero;
-	private final int trabajoIng;
+	private final int IDTURBO;
+	private final int RPM;
+	private final int TAMAÑO;
+	private final Ingeniero INGENIERO;
+	private final int TRABAJOING;
 
 	// ATRIBUTOS
 
 	public Turbo(int idTurbo, int rpm, int tamaño, Ingeniero ingeniero) {
-		this.trabajoIng = ingeniero.trabajo();
-		this.idTurbo = idTurbo;
-		this.rpm = rpm;
-		this.tamaño = tamaño;
-		this.ingeniero = ingeniero;
+		this.TRABAJOING = ingeniero.trabajo();
+		Random aleatorio = new Random();
+		this.IDTURBO = idTurbo;
+		this.RPM = aleatorio.nextInt(10);
+		this.TAMAÑO = aleatorio.nextInt(10);
+		this.INGENIERO = ingeniero;
 	}
 
 	// GETTERS Y SETTERS
 
 	public int getIdTurbo() {
-		return idTurbo;
+		return IDTURBO;
 	}
 
 	public int getRpm() {
-		return rpm;
+		return RPM;
 	}
 
 	public int getTamaño() {
-		return tamaño;
+		return TAMAÑO;
 	}
 
 	public Ingeniero getIngeniero() {
-		return ingeniero;
+		return INGENIERO;
 	}
 
 	public int construido() {
 		
-		return ((rpm+tamaño+trabajoIng)/3);
+		return ((RPM+TAMAÑO+TRABAJOING)/3);
 	}
 }

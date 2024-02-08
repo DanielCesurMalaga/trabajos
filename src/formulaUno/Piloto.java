@@ -1,61 +1,36 @@
 package formulaUno;
+import java.util.Random;
 
 public class Piloto extends Persona {
 
-	//ATRIBUTOS.
-	
-	private int reflejos;
-	private int inteligencia;
-	private int agresividad;
-	private int experiencia;
-	
-	//CONSTRUCTOR
-	
-	public Piloto(int edad, String nombre, int dni, int reflejos, int inteligencia, int agresividad, int experiencia) {
+	// ATRIBUTOS
+
+	private final int REFLEJOS;
+	private final int INTELIGENCIA;
+	private final int AGRESIVIDAD;
+
+	// CONSTRUCTOR
+
+	public Piloto(int edad, String nombre, int dni) {
 		super(edad, nombre, dni);
-		this.reflejos = reflejos;
-		this.inteligencia = inteligencia;
-		this.agresividad = agresividad;
-		this.experiencia = experiencia;
+		Random aleatorio = new Random();
+		this.REFLEJOS = aleatorio.nextInt(10);
+		this.INTELIGENCIA = aleatorio.nextInt(10);
+		this.AGRESIVIDAD = aleatorio.nextInt(10);
 	}
 
-	//GETTERS Y SETTERS
-	
+	// GETTERS Y SETTERS
+
 	public int getReflejos() {
-		return reflejos;
-	}
-
-	public void setReflejos(int reflejos) {
-		this.reflejos = reflejos;
+		return REFLEJOS;
 	}
 
 	public int getInteligencia() {
-		return inteligencia;
-	}
-
-	public void setInteligencia(int inteligencia) {
-		this.inteligencia = inteligencia;
+		return INTELIGENCIA;
 	}
 
 	public int getAgresividad() {
-		return agresividad;
+		return AGRESIVIDAD;
 	}
 
-	public void setAgresividad(int agresividad) {
-		this.agresividad = agresividad;
-	}
-
-	public int getExperiencia() {
-		return experiencia;
-	}
-
-	public void setExperiencia(int experiencia) {
-		this.experiencia = experiencia;
-	}
-	
-	
-	
-	
-	
-	
 }

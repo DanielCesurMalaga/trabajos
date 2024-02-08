@@ -112,6 +112,11 @@ class ArrayIngeniero {
 	}
 
 	// metodos
+	
+	public static int getLongitudDefault() {
+		return lONGITUD_DEFAULT;
+	}
+
 	public int getNumElem() {
 		return numElem;
 	}
@@ -166,7 +171,7 @@ class ArrayIngeniero {
 				miArray[numElem] = null;
 			}
 		} else {
-			System.out.println("Staff vacío, no se puede encontrar el ingeniero");
+			System.out.println("Staff vacio, no se puede encontrar el ingeniero");
 		}
 
 	}

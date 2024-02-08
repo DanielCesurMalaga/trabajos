@@ -2,11 +2,12 @@ package formulaUno;
 
 public class Persona {
 
-	// ATRIBUTOS.
+	// ATRIBUTOS
 
 	private int edad;
 	private String nombre;
 	private int dni;
+	private int experiencia;
 
 	// CONSTRUCTOR
 
@@ -15,6 +16,7 @@ public class Persona {
 		this.edad = edad;
 		this.nombre = nombre;
 		this.dni = dni;
+		this.experiencia = 0;
 	}
 	
 	//GETTERS Y SETTERS
@@ -39,8 +41,16 @@ public class Persona {
 		return dni;
 	}
 
-	public void setDni(int dni) {
-		this.dni = dni;
+	public int getExperiencia() {
+		return experiencia;
+	}
+
+	public void aumentaExperiencia(int aumenta) {
+		this.experiencia = this.experiencia + aumenta;
+	}
+	
+	public String toString() {
+		return ("[Nombre: "+nombre+", dni: "+dni+", edad: "+edad+", experiencia: "+experiencia+"]");
 	}
 
 }
