@@ -38,7 +38,11 @@ public class Ingeniero extends Persona {
 	}
 
 	public String toString() {
-		return (super.toString() + ", [" + "Inteligencia: " + INTELIGENCIA + ", Innovacion: " + INNOVACION + "]");
+		return (super.toString());
+	}
+	
+	public String muestraElemCompleto() {
+		return ("[" +super.toString() +  ", Inteligencia: " + INTELIGENCIA + ", Innovacion: " + INNOVACION + "]");
 	}
 
 	// devuelve un valor del trabajo entre 0 y 10

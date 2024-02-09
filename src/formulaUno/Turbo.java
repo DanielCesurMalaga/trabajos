@@ -1,23 +1,25 @@
 package formulaUno;
+
 import java.util.Random;
+
 public class Turbo {
 
 	// ATRIBUTOS
 
 	private final int IDTURBO;
 	private final int RPM;
-	private final int TAMAﾃ前;
+	private final int TAMAﾑO;
 	private final Ingeniero INGENIERO;
 	private final int TRABAJOING;
 
 	// ATRIBUTOS
 
-	public Turbo(int idTurbo, int rpm, int tamaﾃｱo, Ingeniero ingeniero) {
+	public Turbo(int idTurbo, int rpm, int tama, Ingeniero ingeniero) {
 		this.TRABAJOING = ingeniero.trabajo();
 		Random aleatorio = new Random();
 		this.IDTURBO = idTurbo;
 		this.RPM = aleatorio.nextInt(10);
-		this.TAMAﾃ前 = aleatorio.nextInt(10);
+		this.TAMAﾑO = aleatorio.nextInt(10);
 		this.INGENIERO = ingeniero;
 	}
 
@@ -31,8 +33,8 @@ public class Turbo {
 		return RPM;
 	}
 
-	public int getTamaﾃｱo() {
-		return TAMAﾃ前;
+	public int getTama() {
+		return TAMAﾑO;
 	}
 
 	public Ingeniero getIngeniero() {
@@ -40,7 +42,7 @@ public class Turbo {
 	}
 
 	public int construido() {
-		
-		return ((RPM+TAMAﾃ前+TRABAJOING)/3);
+
+		return ((RPM + TAMAﾑO + TRABAJOING) / 3);
 	}
 }

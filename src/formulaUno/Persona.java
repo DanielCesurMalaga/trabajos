@@ -18,8 +18,8 @@ public class Persona {
 		this.dni = dni;
 		this.experiencia = 0;
 	}
-	
-	//GETTERS Y SETTERS
+
+	// GETTERS Y SETTERS
 
 	public int getEdad() {
 		return edad;
@@ -48,9 +48,14 @@ public class Persona {
 	public void aumentaExperiencia(int aumenta) {
 		this.experiencia = this.experiencia + aumenta;
 	}
-	
+
 	public String toString() {
-		return ("[Nombre: "+nombre+", dni: "+dni+", edad: "+edad+", experiencia: "+experiencia+"]");
+		
+		return ("[" + dni + "]");
+	}
+
+	public String muestraElemCompleto() {
+		return ("[Nombre: " + nombre + ", dni: " + dni + ", edad: " + edad + ", experiencia: " + experiencia + "]");
 	}
 
 }

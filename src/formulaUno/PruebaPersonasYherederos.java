@@ -5,77 +5,98 @@ import practicas.Creator;
 public class PruebaPersonasYherederos {
 
 	public static void main(String[] args) {
+
 		// prueba ingenieros
-
-		ArrayIngeniero ingenierosA = new ArrayIngeniero();
-		System.out.println("num elem inicial del constructor por defecto es 0: " + (ingenierosA.getNumElem() == 0));
-		System.out.println("la longitud del array es de " + ingenierosA.getLongitudDefault() + ": "
-				+ (ingenierosA.getLongitudDefault() == ingenierosA.getMiArray().length));
-		ArrayIngeniero ingenierosB = new ArrayIngeniero(10);
+		int maxElem = 6;
+		System.out.println("*****     PRUEBA PARA ListaDe<Ingeniero>     *****");
+		ListaDe<Ingeniero> ingenieros = new ListaDe<Ingeniero>(maxElem);
+		System.out.println("Número de elementos inicial del constructor con parametro longitud es 0: "
+				+ (ingenieros.getNumElem() == 0));
 		System.out.println(
-				"num elem inicial del constructor con parametro longitud es 0: " + (ingenierosB.getNumElem() == 0));
-		System.out.println("la longitud del array es de 10: " + (10 == ingenierosB.getMiArray().length));
-
-		System.out.println("listado de elementos del array usando getIntMiArray():");
-		for (int i = 0; i < ingenierosB.getMiArray().length; i++) {
-			System.out.print(ingenierosB.getIntMiArray(i) + " ");
+				"la longitud del array es de " + maxElem + ":" + (maxElem == (ingenieros.getMiArray()).length));
+		System.out.println("listado de elementos del array usando getElemento():");
+		for (int i = 0; i < ((ingenieros.getMiArray())).length; i++) {
+			System.out.print(ingenieros.getElemento(i) + " ");
 		}
 		System.out.println();
 		System.out.println("listado de elementos del array usando getMiArray():");
-		for (int i = 0; i < ingenierosB.getMiArray().length; i++) {
-			System.out.print(ingenierosB.getMiArray()[i] + " ");
+		for (int i = 0; i < ((ingenieros.getMiArray())).length; i++) {
+			System.out.print((ingenieros.getMiArray())[i] + " ");
 		}
 		System.out.println();
-
-		System.out.println("listado de elementos del array usando getIntMiArray():");
-		for (int i = 0; i < ingenierosA.getMiArray().length; i++) {
-			System.out.print(ingenierosA.getIntMiArray(i) + " ");
+		System.out.println("\nInsertado de elementos hasta llenar y muestra de cada uno:");
+		for (int i = 0; i < maxElem; i++) {
+			ingenieros.insertarElemento(new Ingeniero(20 + i, Creator.newName(), 100 + i));
+			System.out.print("el ingeniero de la posición [" + i + "] es: ");
+			System.out.println(ingenieros.getElemento(i).getDni());
 		}
-		System.out.println();
-		System.out.println("listado de elementos del array usando getMiArray():");
-		for (int i = 0; i < ingenierosA.getMiArray().length; i++) {
-			System.out.print(ingenierosA.getMiArray()[i] + " ");
-		}
-		System.out.println();
-		for (int i = 0; i < 6; i++) {
-			ingenierosA.insertarValor(new Ingeniero(20 + i, Creator.newName(), 100 + i));
-			System.out.print("el ingeniero de la posiciÃ³n: " + i + " es: ");
-			System.out.println(ingenierosA.getIntMiArray(i).toString());
-		}
-		System.out.println("reseteado miArray:");
-		ingenierosA.resetear();
-		System.out.println("numElem= " + ingenierosA.getNumElem());
-		for (int i = 0; i < 6; i++) {
-			System.out.print("el ingeniero de la posiciÃ³n: " + i + " es: ");
-			System.out.println(ingenierosA.getIntMiArray(i));
+		System.out.println("\nreseteado miArray y muestra de elementos de nuevo:");
+		ingenieros.resetear();
+		System.out.println("Número de elementos: " + ingenieros.getNumElem());
+		System.out.print("Los ingenieros actuales son: ");
+		for (int i = 0; i < ingenieros.getMiArray().length; i++) {
+			System.out.print(ingenieros.getElemento(i) + " ");
 		}
 
-		System.out.println("PRUEBA PARA COMPROBAR TODAS LAS POSIBILIDADES DE DESPEDIR A UN INGENIERO.");
-		System.out.println("   Primera posibilidad: despedir un ingeniero en un array vacÃ­o");
-		ingenierosA.despedirIngeniero(new Ingeniero(26, "Pedro", 123));
-		System.out.println("   Segunda posibilidad: despedir un ingeniero que no estÃ©");
+		System.out.println("\n");
+		System.out.println("***     PRUEBA PARA COMPROBAR TODAS LAS POSIBILIDADES DE DESPEDIR A UN INGENIERO.     ***");
+
+		System.out.println("\n   (1): despedir un ingeniero en un array vacío");
+		ingenieros.destruirElemento(new Ingeniero(26, "Pedro", 123));
+
+		// Primero relleno el array al completo
 		for (int i = 0; i < 6; i++) {
-			ingenierosA.insertarValor(new Ingeniero(20 + i, Creator.newName(), 100 + i));
+			ingenieros.insertarElemento(new Ingeniero(20 + i, Creator.newName(), 100 + i));
 		}
-		ingenierosA.despedirIngeniero(new Ingeniero(26, "Pedro", 123));
-		System.out.println("   Tercera posibilidad: despedir un ingeniero que estÃ© en el staff");
+		System.out.print("Se rellena el array al completo de nuevo: ");
+		ingenieros.mostrarElementos();
+		System.out.println();
+
+		System.out.println("\n   (2): despedir un ingeniero que no está (dni 123):");
+
+		// luego intento borrar un elemento que no está.
+		ingenieros.destruirElemento(new Ingeniero(26, "Pedro", 123));
+
+		System.out.println("\n   (3): despedir un ingeniero que está en el staff");
 		System.out.println("      a) array lleno.");
-		System.out.println("         1) ultima posicion.");
-		System.out.println("NumElem antes: " + ingenierosA.getNumElem());
-		ingenierosA.despedirIngeniero(ingenierosA.getIntMiArray(ingenierosA.getNumElem()-1));
-		System.out.println("valor en posiciÃ³n ultima: " + ingenierosA.getIntMiArray(ingenierosA.getNumElem()));
-		System.out.println("NumElem despuÃ©s: " + ingenierosA.getNumElem());
+		System.out.println("         1) ultima posición.");
+		System.out.println("NumElem antes: " + ingenieros.getNumElem());
+		System.out.println(
+				"valor en posición ultima antes: " + ingenieros.getElemento(ingenieros.getNumElem() - 1).getDni());
+		System.out.println("valor en posición penúltima antes: "
+				+ ingenieros.getElemento(ingenieros.getNumElem() - 2).getDni());
+		// destruyo el elemento último.
+		ingenieros.destruirElemento(ingenieros.getElemento(ingenieros.getNumElem() - 1));
+		System.out.println("NumElem después: " + ingenieros.getNumElem());
+		System.out.println(
+				"valor en posición ultima después: " + ingenieros.getElemento(ingenieros.getNumElem() - 1).getDni());
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
+		System.out.println("         2) posición intermedia. Se borra elemento nº 3");
+		System.out.println("Se inserta elemento nuevo para rellenar de nuevo array al completo");
+		// vuelvo a insertar elem para llenar array al completo..
+		ingenieros.insertarElemento(new Ingeniero(46, "Luis", 12));
+		System.out.println("NumElem antes: " + ingenieros.getNumElem());
+		System.out.println("valor en posición 3 antes: " + ingenieros.getElemento(2).getDni());
+		System.out.println("valor en posición 4 antes: " + ingenieros.getElemento(3).getDni());
+		// destruyo el elemento 3.
+		ingenieros.destruirElemento(ingenieros.getElemento(2));
+		System.out.println("NumElem después: " + ingenieros.getNumElem());
+		System.out.println(
+				"valor en posición 3 después: " + ingenieros.getElemento(2).getDni());
+		System.out.println("valor en posición 4 después: " + ingenieros.getElemento(3).getDni());
 		
-		System.out.println("         2) posicion intermedia.");
-		System.out.println("         3) primera posicion.");
-
-		System.out.println("      b) array semilleno");
-		System.out.println("      c) array con uno");
-		// prueba pilotos
-
-		// prueba mecanicos
-
+		System.out.println("\n         3) posición inicial.");
+		System.out.println("Se inserta elemento nuevo para rellenar de nuevo array al completo");
+		// vuelvo a insertar elem para llenar array al completo..
+		ingenieros.insertarElemento(new Ingeniero(26, "Juan", 256));
+		System.out.println("NumElem antes: " + ingenieros.getNumElem());
+		System.out.println("valor en posición primera antes: " + ingenieros.getElemento(0).getDni());
+		System.out.println("valor en posición segunda antes: " + ingenieros.getElemento(1).getDni());
+		// destruyo el elemento posicion primera.
+		ingenieros.destruirElemento(ingenieros.getElemento(0));
+		System.out.println("NumElem después: " + ingenieros.getNumElem());
+		System.out.println(
+				"valor en posición primera después: " + ingenieros.getElemento(0).getDni());
+		System.out.println("valor en posición segunda después: " + ingenieros.getElemento(1).getDni());
 	}
 }
