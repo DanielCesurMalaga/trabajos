@@ -79,7 +79,7 @@ class ArrayCoche {
 				}
 				miArray[numElem] = null;
 			}
-		} else { // garaje vacío no hay q buscar para eliminar
+		} else { // garaje vac�o no hay q buscar para eliminar
 			System.out.println("Garaje vacío, no se puede encontrar el coche");
 		}
 
