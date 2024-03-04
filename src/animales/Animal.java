@@ -1,12 +1,14 @@
 package animales;
 
-public class Animal {
+import java.io.Serializable;
+
+public class Animal implements Serializable {
 	// atributos
 	private String nombre;
 	private int tpoVida;
 	
 	// constructor con dos parámetros
-	protected Animal(String nombre, int tpoVida) {
+	public Animal(String nombre, int tpoVida) {
 		super();
 		this.nombre = nombre;
 		if ((tpoVida > 0) && (tpoVida < 150)) {

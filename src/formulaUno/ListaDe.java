@@ -64,7 +64,7 @@ class ListaDe<E> {
 			boolean noEncontrado = true;
 			int contador = 0;
 			while (noEncontrado && (contador < numElem)) {
-				if (miArray[contador] == elemento) {
+				if (miArray[contador].equals(elemento)) {
 					noEncontrado = false;
 				} else {
 					contador++;

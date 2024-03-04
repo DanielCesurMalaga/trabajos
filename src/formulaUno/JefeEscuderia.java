@@ -7,6 +7,7 @@ public class JefeEscuderia extends Persona {
 
 	private final int INTELIGENCIA;
 	private final int LIDERAZGO;
+	private final int COSTE;
 
 	// CONSTRUCTOR
 
@@ -15,6 +16,11 @@ public class JefeEscuderia extends Persona {
 		Random aleatorio = new Random();
 		this.INTELIGENCIA = aleatorio.nextInt(10);
 		this.LIDERAZGO = aleatorio.nextInt(10);
+		this.COSTE = (this.INTELIGENCIA + this.LIDERAZGO)/2;
+	}
+	
+	public JefeEscuderia(Persona persona) {
+		this(persona.getEdad(), persona.getNombre(),persona.getDni());
 	}
 
 	// GETTERS Y SETTERS
@@ -25,6 +31,10 @@ public class JefeEscuderia extends Persona {
 
 	public int getLiderazgo() {
 		return LIDERAZGO;
+	}
+
+	public int getCoste() {
+		return COSTE;
 	}
 
 }

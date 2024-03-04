@@ -12,6 +12,7 @@ public class PruebaPersonasYherederos {
 		ListaDe<Ingeniero> ingenieros = new ListaDe<Ingeniero>(maxElem);
 		System.out.println("Número de elementos inicial del constructor con parametro longitud es 0: "
 				+ (ingenieros.getNumElem() == 0));
+
 		System.out.println(
 				"la longitud del array es de " + maxElem + ":" + (maxElem == (ingenieros.getMiArray()).length));
 		System.out.println("listado de elementos del array usando getElemento():");
@@ -63,10 +64,15 @@ public class PruebaPersonasYherederos {
 		System.out.println("NumElem antes: " + ingenieros.getNumElem());
 		System.out.println(
 				"valor en posición ultima antes: " + ingenieros.getElemento(ingenieros.getNumElem() - 1).getDni());
-		System.out.println("valor en posición penúltima antes: "
-				+ ingenieros.getElemento(ingenieros.getNumElem() - 2).getDni());
+		System.out.println(
+				"valor en posición penúltima antes: " + ingenieros.getElemento(ingenieros.getNumElem() - 2).getDni());
 		// destruyo el elemento último.
-		ingenieros.destruirElemento(ingenieros.getElemento(ingenieros.getNumElem() - 1));
+		Ingeniero ingeniero = new Ingeniero(
+				ingenieros.getElemento(ingenieros.getNumElem() - 1).getEdad(),
+				ingenieros.getElemento(ingenieros.getNumElem() - 1).getNombre(),
+				ingenieros.getElemento(ingenieros.getNumElem() - 1).getDni()
+				);
+		ingenieros.destruirElemento(ingeniero);
 		System.out.println("NumElem después: " + ingenieros.getNumElem());
 		System.out.println(
 				"valor en posición ultima después: " + ingenieros.getElemento(ingenieros.getNumElem() - 1).getDni());
@@ -81,10 +87,9 @@ public class PruebaPersonasYherederos {
 		// destruyo el elemento 3.
 		ingenieros.destruirElemento(ingenieros.getElemento(2));
 		System.out.println("NumElem después: " + ingenieros.getNumElem());
-		System.out.println(
-				"valor en posición 3 después: " + ingenieros.getElemento(2).getDni());
+		System.out.println("valor en posición 3 después: " + ingenieros.getElemento(2).getDni());
 		System.out.println("valor en posición 4 después: " + ingenieros.getElemento(3).getDni());
-		
+
 		System.out.println("\n         3) posición inicial.");
 		System.out.println("Se inserta elemento nuevo para rellenar de nuevo array al completo");
 		// vuelvo a insertar elem para llenar array al completo..
@@ -95,8 +100,7 @@ public class PruebaPersonasYherederos {
 		// destruyo el elemento posicion primera.
 		ingenieros.destruirElemento(ingenieros.getElemento(0));
 		System.out.println("NumElem después: " + ingenieros.getNumElem());
-		System.out.println(
-				"valor en posición primera después: " + ingenieros.getElemento(0).getDni());
+		System.out.println("valor en posición primera después: " + ingenieros.getElemento(0).getDni());
 		System.out.println("valor en posición segunda después: " + ingenieros.getElemento(1).getDni());
 	}
 }

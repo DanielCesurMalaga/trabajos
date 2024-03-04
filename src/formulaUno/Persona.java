@@ -25,8 +25,8 @@ public class Persona {
 		return edad;
 	}
 
-	public void setEdad(int edad) {
-		this.edad = edad;
+	public void AumentaEdad() {
+		this.edad++;
 	}
 
 	public String getNombre() {
@@ -50,12 +50,20 @@ public class Persona {
 	}
 
 	public String toString() {
-		
-		return ("[" + dni + "]");
+
+		return ("[Nombre: " + nombre + ", dni: " + dni + ", edad: " + edad + ", experiencia: " + experiencia + "]");
 	}
 
-	public String muestraElemCompleto() {
-		return ("[Nombre: " + nombre + ", dni: " + dni + ", edad: " + edad + ", experiencia: " + experiencia + "]");
+	public boolean equals(Object o) { // dos personas son iguales si tienen el mismo dni
+		if (o instanceof Persona) {
+			return (this.dni == ((Persona) o).dni);
+		} else {
+			return false;
+		}
+	}
+
+	public int hashCode() {
+		return this.dni;
 	}
 
 }
