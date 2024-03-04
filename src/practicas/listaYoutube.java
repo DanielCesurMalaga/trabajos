@@ -54,6 +54,9 @@ public class listaYoutube {
 			if (lector!=null) {
 				lector.close();
 			}
+			if (escritor!=null) {
+				escritor.close();
+			}
 		}
 
 	}
