@@ -2,6 +2,7 @@ package practicas;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -18,8 +19,9 @@ public class listaYoutube {
 		// cada linea q me interesa la almaceno en un String.
 		// al final de cada bloque almaceno en otro fichero la union de las 3 lineas
 		// orden: num - nombre - tiempo
+		// creamos un directorio dentro del workspace y ahí almacenamos el fin.txt
 		
-		
+		File directorio = null;
 		BufferedReader lector = null;
 		BufferedWriter escritor = null;
 		String num = null;
@@ -27,8 +29,10 @@ public class listaYoutube {
 		String nombre = null;
 		String frase = null;
 		try {
+			directorio = new File("dirFinal");
+			directorio.mkdir();
 			lector = (new BufferedReader(new FileReader("inicio.txt")));
-			escritor = new BufferedWriter(new FileWriter("fin.txt"));
+			escritor = new BufferedWriter(new FileWriter(".//dirFinal//"+"fin.txt",true));
 			
 			for (int j = 0; j < 45; j++) {
 				for (int i = 0; i < 9; i++) {
@@ -42,7 +46,7 @@ public class listaYoutube {
 						lector.readLine(); //  linea q no me interesa
 					}
 				}
-				frase = num + " - " + nombre + " - " + tiempo;
+				frase = num + " - " + nombre + " - " + tiempo+"\n";
 				escritor.write(frase);
 			}
 			
