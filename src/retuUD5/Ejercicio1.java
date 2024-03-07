@@ -9,6 +9,8 @@ import java.io.IOException;
 public class Ejercicio1 {
 	public static void main(String[] args) {
 
+		System.out.println(System.getProperty("user.dir"));
+
 	}
 
 	static boolean leerDeFichero(File miFichero) throws IOException {
