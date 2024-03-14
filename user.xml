@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Users>
+  <user id="1">
+    <firstName>Adrian</firstName>
+    <lastName>Ungureanu</lastName>
+    <occupation>estudiante</occupation>
+  </user>
+  <user id="2">
+    <firstName>Daniel</firstName>
+    <lastName>Fernandez</lastName>
+    <occupation>quien sabe</occupation>
+  </user>
+</Users>
